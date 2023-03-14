@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель управления студентами</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <form class="form mb-3">
+      <h2 class="text-center"> Добавить студента</h2>
+      <ul class="list list-group">
+        <li class='list-group-item'>
+          <label for="student__name">Имя</label>
+          <input class="form-control student" id="student__name" type="text">
+        </li>
+        <li class='list-group-item'>
+          <label for="student__sname">Фамилия</label>
+          <input class="form-control student" id="student__sname" type="text">
+        </li>
+        <li class='list-group-item'>
+          <label for="student__lname">Отчетство</label>
+          <input class="form-control student" id="student__lname" type="text">
+        </li>
+        <li class='list-group-item'>
+          <label for="student__bdate">Дата рождения</label>
+          <input class="form-control student" id="student__bdate" type="date">
+        </li>
+        <li class='list-group-item'>
+          <label for="student__startLearn">Год начала обучения</label>
+          <input class="form-control student" id="student__startLearn" type="text">
+        </li>
+        <li class='list-group-item'>
+          <label for="student__faculty">Факультет</label>
+          <input class="form-control student" id="student__faculty" type="text">
+        </li>
+        <button onclick="onAddStudent()" type="button" class="btn btn-primary btn-add">Добавить судента</button>
+      </ul>
+    </form>
+    <div class="mb-3 filter__container">
+      <h2 class="text-center">Поиск студента</h2>
+      <ul class="list-group filter__list">
+        <li class="list-group-item filter__list-item">
+          <label for="">по ФИО</label>
+          <input class="form-control filter" type="text" id="inputFio">
+        </li>
+        <li class="list-group-item filter__list-item">
+          <label for="fac">по факультету</label>
+          <input class="form-control filter" type="text" id="inputFac">
+        </li>
+        <li class="list-group-item filter__list-item">
+          <label for="date-start">по году начала обучения </label>
+          <input class="form-control filter" type="text" id="inputDateStart">
+        </li>
+        <li class="list-group-item filter__list-item">
+          <label for="date-end">по году окончания обучения</label>
+          <input class="form-control filter" type="text" id="inputDateEnd">
+        </li>
+      </ul>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th onclick="sortColumn('fioObj')">ФИО</th>
+          <th onclick="sortColumn('fac')">Факультет</th>
+          <th onclick="sortColumn('bdate')">Дата рождения</th>
+          <th onclick="sortColumn('startlearn')">Год обучения</th>
+        </tr>
+      </thead>
+      <tbody id="mytable"></tbody>
+    </table>
+  </div>
+  <script src="./js/main.js"></script>
+</body>
